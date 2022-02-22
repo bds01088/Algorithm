@@ -10,3 +10,17 @@ x
 해결방법
 
 '''
+import sys
+sys.stdin = open("input.txt")
+
+tc = int(input())
+
+for t in range(tc):
+    #10단위
+    n = int(input())//10
+    memo = [1,3]
+
+    for i in range(2, n):
+        # 점화식 그림 참고하자
+        memo.append(memo[i-1] + memo[i-2]*2)
+    print(f'#{t+1} {memo[-1]}')
