@@ -3,6 +3,8 @@ n, m이 주어진 다음
 n*n배열이 주어지고
 m개의 좌표값 x1, y1, x2, y2가 주어진다
 좌상단 x1,y1좌표에서 우하단 x2,y2까지의 사각형의 합을 구하라
+
+미완성, DP 이용하기로 하자
 '''
 import sys
 input = sys.stdin.readline
