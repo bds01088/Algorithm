@@ -10,9 +10,12 @@ def inorder(node):
 
 for t in range(1, 11):
     n = int(input())
+    #노드번호, val, 좌, 우
     arr = [[0,0,0,0] for _ in range(n+1)]
     for i in range(1, n+1):
         str = input().split()
+        #node, val, *next_node = input().split()
+        #kwarg사용하면 가변입력 받을수있다
         while len(str) < 4 :
             str.append(0)
         for j in range(4):
