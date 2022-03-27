@@ -1,13 +1,17 @@
 '''
-일단은
-16진수로 되어있는 코드만 발굴해오는 걸 하자
-코드 내부에도 0이 포함되어 있는 경우가 있으니
-0이 5개 연속으로 나오면 코드가 끝난 것으로 파악하고
-한줄에 두개의 코드가 있을 수도 있으므로
-처음부터 끝까지 다돌아야한다
+그냥 브루트 포스로 탐색한다
+입력받는 16진수를
+하나도 빠짐없이 그냥 2진수 4자리로 고정시켜서
+문자열로 붙이고 저장한다
+거기서 뒤에서 부터 탐색해서 1인 곳을 찾으면
+그 윗행에 0이 존재한다면
+카운트 시작한다
+행이 0인 지점에는 암호가 들어올 수 없다
+윗행이 0이 존재하는 것으로 암호코드가 아래쪽에 중복되어 나타나는 걸 합 추가가 안되도록 방지할 수 있다
+
 '''
 import sys
-sys.stdin = open('iinput.txt')
+sys.stdin = open('input.txt')
 
 tc = int(input())
 
@@ -30,29 +34,24 @@ for t in range(tc):
     code = []
     board = []
 
-    #암호가 있는 열 추출
     for i in range(row) :
         board.append(list(input()))
-        #암호가 없는 코드는 0*col과 동일할 것이고
-        #중복해서 암호가 나오는 특성상 not in 을 사용해주었다.
-        if board[i] != ['0']*col and  board[i] not in code:
-            code.append(board[i])
+
     #print(code)
     #암호 추출
     #code에는 현재 한 row가 들어가있기 때문에
     #0은 2진수로 변환해도 0이다
     #code에 들어있는 모든 것을 하나씩 2진수로 변환하자
     #0을 기준으로 뭐 끊긴다거나 그런건 다 다르기 때문에 절대 못한다
-    #또한 여러 암호코드가 한줄에 겹쳐서 나오는 경우도 같이 포함하고 있기 때문에
-    #중복 코드를 또 제거해주어야 할 것이다
+
 
     #16진수 2진수로 변환
     code_2 = []
-    for x in code :
+    for i in range(row):
         temp = ''
-        for element in x :
+        for j in range(col) :
             #4자리로 고정시켜서 변환해야한다
-            te = bin(int(element, 16)).replace('0b', '')
+            te = bin(int(board[i][j], 16)).replace('0b', '')
             while len(te) < 4 :
                 te = '0'+te
             temp += te
@@ -60,6 +59,7 @@ for t in range(tc):
     #print(code_2)
 
     #변화된 값을 뒤에서부터 1인지점 찾고
+    #그 위치의 윗행이 0일때 카운트 시작하고
     #1부터 0이 나올때까지 cnt 측정
     #0이나오면 cnt를 저장
     #그 이후 1이나올때까지 cnt 측정 저장을 반복 2회함
@@ -71,14 +71,12 @@ for t in range(tc):
     #다시 1이 시작될때까지 왼쪽으로 이동하면 됌
 
     ans = 0
-    for pnum, p in enumerate(code_2) :
-        code_list = []
+    code_list = []
+    for i in range(row) :
         resolve = [0 for _ in range(9)]
         resolve_num = 8
-        i = len(p)-1
-        while i > 0:
-            odd_list = [0] * 3
-            odd = ''
+        j = len(code_2[i])-1
+        while j > 0:
             #시작점을 찾아야하는데
             #그냥 -1씩 해주면서 최초 시작점을 찾고
             #시작점을 찾으면 그 if문 안에서 카운팅을 하고
@@ -87,49 +85,56 @@ for t in range(tc):
             #비율을 str로 변형하여
             #password값에서 일치하는값을 찾아
             #resolve리스트에 넣자
-            if p[i] == '1':
+            if code_2[i][j] == '1' and code_2[i-1][j] == '0':
+                odd_list = [0] * 3
+                odd = ''
+
                 cnt = 0
-                while i >= 0 and p[i] == '1':
+                while j >= 0 and code_2[i][j] == '1':
                     cnt += 1
-                    i -= 1
+                    j -= 1
                 odd_list[2] = cnt
+
                 cnt = 0
-                while i >= 0 and p[i] == '0':
+                while j >= 0 and code_2[i][j] == '0':
                     cnt += 1
-                    i -= 1
+                    j -= 1
                 odd_list[1] = cnt
+
                 cnt = 0
-                while i >= 0 and p[i] == '1':
+                while j >= 0 and code_2[i][j] == '1':
                     cnt += 1
-                    i -= 1
+                    j -= 1
                 odd_list[0] = cnt
 
+                mmin = min(odd_list)
                 for q in range(3):
-                    odd += str(odd_list[q] // min(odd_list))
+                    odd += str(odd_list[q] // mmin)
 
                 if odd in password:
                     resolve[resolve_num] = password[odd]
                     resolve_num -= 1
+
                 #8개로 이루어진 코드 완성 시
                 if resolve_num == 0 :
-                    if resolve not in code_list :
-                        code_list.append(resolve)
+                    code_list.append(resolve)
                     resolve = [0 for _ in range(9)]
                     resolve_num = 8
 
             else :
-                i -= 1
+                j -= 1
+    ans = 0
+    for ccc in code_list:
         s = 0
-        for ccc in code_list:
-            for l in range(1, 9):
-                # 홀수
-                if l % 2 == 1:
-                    s += ccc[l] * 3
-                else:
-                    s += ccc[l]
-            if s % 10 == 0:
-                ans += sum(ccc)
+        for l in range(1, 9):
+            # 홀수
+            if l % 2 == 1:
+                s += ccc[l] * 3
             else:
-                ans += 0
+                s += ccc[l]
+        if s % 10 == 0:
+            ans += sum(ccc)
+        else:
+            ans += 0
     print(f'#{t+1} {ans}')
 
