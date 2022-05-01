@@ -60,17 +60,17 @@ sys.stdin = open('input.txt')
 #             newstartnode = board[idx].index(x)
 #             find(newstartnode)
 
-def find(startnode):
-    global crash, ans, atom, board
-    #이미 각 노드별로 최소값을 구했다.
-    #board에서 최소값과 같은 곳들은 다 동시에 부딧히는거임
-    mmin = min(board[startnode])
-    for j in range(n):
-        if startnode != j:
-            mmmin = min(board[j])
-            if mmin == mmmin :
-                ans += atom[j][3]
-                crash[j] = 1
+# def find(startnode):
+#     global crash, ans, atom, board
+#     #이미 각 노드별로 최소값을 구했다.
+#     #board에서 최소값과 같은 곳들은 다 동시에 부딧히는거임
+#     mmin = min(board[startnode])
+#     for j in range(n):
+#         if startnode != j:
+#             mmmin = min(board[j])
+#             if mmin == mmmin :
+#                 ans += atom[j][3]
+#                 crash[j] = 1
         
 
 tc = int(input())
@@ -96,7 +96,7 @@ for t in range(tc):
                 #기준원자의 방향이 위로 갈때
                 if atom[i][2] == 0 :
                     #비교원자의 방향이 아래일때
-                    if atom[j][2] == 1 and atom[i][0] == atom[j][0] :
+                    if atom[j][2] == 1 and atom[i][0] == atom[j][0] and atom[i][1] < atom[j][1]:
                         c = atom[j][1] - atom[i][1]
                         if board[i][j] > c and board[j][i] > c:
                             board[i][j] = c
@@ -116,7 +116,7 @@ for t in range(tc):
                 # #기준원자의 방향이 왼쪽으로 갈때
                 elif atom[i][2] == 2 :
                     #비교원자의 방향이 오른쪽으로 움직일때
-                    if atom[j][2] == 3 and atom[i][1] == atom[j][1] :
+                    if atom[j][2] == 3 and atom[i][1] == atom[j][1] and atom[i][0] > atom[j][0] :
                         c = atom[i][0] - atom[j][0]
                         if board[i][j] > c and board[j][i] > c:
                             board[i][j] = c
