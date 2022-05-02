@@ -1,0 +1,141 @@
+#1
+int&&[]* a;
+int& b;
+int&* c;
+
+#2
+Double[][][] Array;
+
+#3
+int a;
+
+#4
+int& a;
+
+#5
+int[] aba;
+
+#6
+int* abacaba;
+
+#7
+int* abacabadabacaba;
+
+#8
+int* abacabadabacabaeabacabadabacaba;
+
+#9
+int[] abacabadabacabaeabacabadabacabafabacabadabacabaeabacabadabacaba;
+
+#10
+int&*&& a;
+int&*&*& b;
+int&*&&&* c;
+
+#11
+int a;
+int b;
+int c;
+int d;
+int e;
+int f;
+int g;
+int h;
+int i;
+int j;
+int k;
+int l;
+int m;
+int n;
+int o;
+int p;
+int q;
+int r;
+int s;
+int t;
+int u;
+int v;
+int w;
+int x;
+int y;
+int z;
+int aa;
+int ab;
+int ac;
+int ad;
+int ae;
+int af;
+int ag;
+int ah;
+int ai;
+
+#12
+int[][][][] a;
+int[][][][][] b;
+int[][][][][][] c;
+
+#13
+int*&*&[][] a;
+int b;
+int*&*&***[][]**[] c;
+int[][]&&[] d;
+
+#14
+dsafsd&**[]&[] adsf;
+dsafsd****&&& dsaf;
+dsafsd&&[]&** dsfa;
+dsafsd*[]&&** rfsdgf;
+dsafsd dasfs;
+
+#15
+a[]*&&[][][]&&[]&***&*[]&[][]&[][]& b;
+a[]*[][]**[]**[]&[]**&*[]&&&&&&[][] c;
+a[][]&&[][][]&[][][]&* d;
+a*&&*[]*[] e;
+
+#16
+a[]&*&&*[]*&&&*[]*[]*[]&[]&[]&*&[]*&&&[]*[][]*[]**[]&****[]*&[]&[][]&[]&[]*[]*[][][]&[][][]*&&***[]*[]*&&&&[][][][][] b;
+
+#17
+a*[]*&[]*[]&[]&&****[]&*[]*&&&&[]&*[]**[]&[]*[][]*[]&[]***&[]*[][]&[]&&*[]&[]*&*&&*[]*&&&*[]*[]*[]&[][][]&[][]*[]&&* b;
+
+#18
+a[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] d;
+
+#19
+a[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] e;
+
+#20
+a******************************************************************************************************************** f;
+
+#21
+q&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& a;
+
+#22
+zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz i;
+
+#23
+i zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz;
+
+#24
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] a;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] b;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] c;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] d;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] e;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] f;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] g;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] h;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] i;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] j;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] k;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] l;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] m;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] n;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] o;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] p;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] q;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] r;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] s;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] t;
+uadsfoisnhdfsdiufdsf**[]&&&*[]*&*[]*&*[]*[]&*[]**[][]*&[] u;
