@@ -15,6 +15,7 @@ def bfs(srow, scol) :
 
     while q :
         row, col, distance, chance = q.popleft()
+        #도착했을때 길이가 더 짧을 경우 정답 갱신
         if row == n-1 and col == m-1:
             if ans > distance :
                 ans = distance
@@ -33,12 +34,15 @@ def bfs(srow, scol) :
                     visit[nrow][ncol][1] = ndistance
                     q.append([nrow, ncol, ndistance, nchance])
                 #벽 안뚫은 상태일때
-                elif nchance is False and 0 <= nrow < n and 0 <= ncol < m \
-                        and (visit[nrow][ncol][0] > ndistance or visit[nrow][ncol][0] == 0) and board[nrow][ncol] != 1 :
+                #벽 안뚫고 갔던 적이 없거나, 있어도 보다 적은 길이로 도착했을 경우
+                elif nchance is False and (visit[nrow][ncol][0] > ndistance or visit[nrow][ncol][0] == 0) \
+                        and board[nrow][ncol] != 1 :
                     visit[nrow][ncol][0] = ndistance
                     q.append([nrow, ncol, ndistance, nchance])
                 #벽 뚫은 상태일때
-                elif nchance is True and 0 <= nrow < n and 0 <= ncol < m and (visit[nrow][ncol][1] > ndistance or visit[nrow][ncol][1] == 0) \
+                #벽 안뚫은 상태로 진행한 적보다 더 멀리 돌아왔을 경우 실행x
+                #벽 뚫은 상태로 이전에 안 지나갔거나, 보다 적은 길이로 도착했을 경우
+                elif nchance is True and (visit[nrow][ncol][1] > ndistance or visit[nrow][ncol][1] == 0) \
                     and (ndistance < visit[nrow][ncol][0] or visit[nrow][ncol][0] == 0) and board[nrow][ncol] != 1 :
                     visit[nrow][ncol][1] = ndistance
                     q.append([nrow,ncol,ndistance, nchance])
