@@ -33,7 +33,6 @@ for i in range(m):
             cnt += end_idx-start_idx
     print(cnt)
 '''
-
 import sys
 
 from collections import defaultdict
