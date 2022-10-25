@@ -40,10 +40,6 @@ def FindAns(height):
     elif t == ans :
         if ans_height < height :
             ans_height = height
-    # if t <= ans :
-    #     if height > ans_height :
-    #         ans_height = height
-    #     ans = t
     return
 
 
@@ -66,9 +62,8 @@ for i in range(n):
 ans = 99999999999
 ans_height = 0
 
-# for h in range(mmax+1, mmin, -1):
-#     if 0 <= h < 257:
-#         FindAns(h)
-for h in range(256, -1, -1):
+for h in range(mmax, mmin-1, -1):
     FindAns(h)
+# for h in range(256, -1, -1):
+#     FindAns(h)
 print(ans, ans_height)
