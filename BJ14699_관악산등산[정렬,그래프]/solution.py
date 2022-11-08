@@ -2,7 +2,11 @@ import sys
 
 input = lambda : sys.stdin.readline().strip()
         
-
+'''
+똑같은 높이는 없다.
+고로 맨 위 정상부터 계산하면 정상은 자기 자신밖에 못들리니까 1
+그 정상과 연결된 하위 휴식터는 연결된 정상들 중 최대값을 가진 것에 +1 한 값이 최대값
+'''
 N, M = map(int, input().split())
 
 height = list(map(int, input().split()))
