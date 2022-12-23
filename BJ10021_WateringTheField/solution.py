@@ -8,6 +8,7 @@ N의 범위는 1~2000이라 N^2시간이 걸릴 수 있음
 따로 방법이 없어 보임
 모든 거리를 계산하고
 sort한다음 k보다 큰 지점부터 연결하는 건?
+sort하는건 시간초과 뜬다 -> heapq 우선순위 큐를 사용해서 해결
 '''
 
 import sys
@@ -26,6 +27,7 @@ def uclDist(pointA, pointB):
 
 def findP(x):
     if parent[x] != x :
+        #경로 압축 : 시간 줄여줌
         parent[x] = findP(parent[x])
         return parent[x]
     else :
